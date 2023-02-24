@@ -10,22 +10,14 @@ There will always be at least one number in the input string.
 Output string must be two numbers separated by a single space, and highest number is first. */
 
 function highAndLow(numbers){
-  
-    let numbersOnly = []
+
     let highestNum 
     let lowestNum 
 
     let numToArray = numbers.split(' ').map(str => Number(str))
 
-    numToArray.forEach(element => {
-        if(!isNaN(element)) {
-            numbersOnly.push(element)
-        } 
-    })
-
-    console.log(numbersOnly)
-    highestNum = Math.max(...numbersOnly)
-    lowestNum = Math.min(...numbersOnly)
+    highestNum = Math.max(...numToArray)
+    lowestNum = Math.min(...numToArray)
 
     return `${highestNum} ${lowestNum}`
 
