@@ -1,29 +1,43 @@
-/* A square of squares
-You like building blocks. You especially like building blocks that are squares. And what you even like more, is to arrange them into a square of square building blocks!
+/* You are going to be given a word. Your job is to return the middle character of the word. If the word's length is odd, return the middle character. If the word's length is even, return the middle 2 characters.
 
-However, sometimes, you can't arrange them into a square. Instead, you end up with an ordinary rectangle! Those blasted things! If you just had a way to know, whether you're currently working in vain… Wait! That's it! You just have to check if your number of building blocks is a perfect square.
+#Examples:
 
-Task
-Given an integral number, determine if it's a square number:
+Kata.getMiddle("test") should return "es"
 
-In mathematics, a square number or perfect square is an integer that is the square of an integer; in other words, it is the product of some integer with itself.
+Kata.getMiddle("testing") should return "t"
 
-The tests will always use some integral number, so don't worry about that in dynamic typed languages.
+Kata.getMiddle("middle") should return "dd"
 
-Examples
--1  =>  false
- 0  =>  true
- 3  =>  false
- 4  =>  true
-25  =>  true
-26  =>  false */
+Kata.getMiddle("A") should return "A"
+#Input
 
-var isSquare = function(n){
+A word (string) of length 0 < str < 1000 (In javascript you may get slightly more than 1000 in some test cases due to an error in the test cases). You do not need to test for this. This is only here to tell you that you do not need to worry about your solution timing out.
 
-    return Math.ceil(Math.sqrt(n))=== Math.floor(Math.sqrt(n))
+#Output
+
+The middle character(s) of the word represented as a string. */
+
+function getMiddle(s)
+{
+  //Code goes here! 
+  
+  //plan: no matter the result, split string into an array, then if even, slice from length/2 then end after 2 indices, 
+
+  let stringArray = s.split('')
+  let stringLength = s.length-1
+  if (stringArray.length%2===0) {
     
+    return (stringArray.slice((stringLength/2), (stringLength/2+2)).join(''))
+  } else {
+    return (stringArray.slice((stringLength/2), (stringLength/2 + 1)).join(''))
   }
+ 
 
-  let testNum = 4
+  //if odd, still slice from length/2, but this time, round the value up, and slice only that value. Finally, join the result into a string
+  //and return said string.
 
-  console.log(isSquare(testNum))
+}
+
+let testString = "fire"
+
+getMiddle(testString)
