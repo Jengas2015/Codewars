@@ -26,7 +26,6 @@ function getMiddle(s)
   let stringArray = s.split('')
   let stringLength = s.length-1
   if (stringArray.length%2===0) {
-    
     return (stringArray.slice((stringLength/2), (stringLength/2+2)).join(''))
   } else {
     return (stringArray.slice((stringLength/2), (stringLength/2 + 1)).join(''))
