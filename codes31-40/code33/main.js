@@ -3,7 +3,7 @@
 Note: you will always receive a valid array containing a random assortment of direction letters ('n', 's', 'e', or 'w' only). It will never give you an empty array (that's not a walk, that's standing still!). */
 
 function isValidWalk(walk) {
-    let coordinates = [0,0]
+    const coordinates = [0,0]
     for (let i = 0; i<walk.length; i++) {
         if (walk[i]==='n') {
             coordinates[1]++
@@ -18,6 +18,6 @@ function isValidWalk(walk) {
     return coordinates[0] === 0 && coordinates[1] === 0 && walk.length===10
   }
 
-  console.log(isValidWalk(['n','s','n','s','n','s','n','s','n','s']))
+  console.log(isValidWalk(['n','s','n','s','n','s','n','s','n','e']))
 
   // tweet to explanation: https://twitter.com/Codingwithroy/status/1636729996034048000?s=20
