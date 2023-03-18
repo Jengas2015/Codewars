@@ -21,3 +21,28 @@ function isValidWalk(walk) {
   console.log(isValidWalk(['n','s','n','s','n','s','n','s','n','e']))
 
   // tweet to explanation: https://twitter.com/Codingwithroy/status/1636729996034048000?s=20
+
+  const correctAnswer = 'SUSER'
+
+  function testwordle(guess) {
+    const wordArray = guess.toUpperCase().split('') 
+    const correctAnswerArray = correctAnswer.toUpperCase().split('')
+
+    wordArray.forEach((letter, index)=> {
+        if(letter === correctAnswerArray[index]) {
+            console.log("Correct letter!")
+            correctAnswerArray.splice(index, 1)
+        } else if (correctAnswerArray.includes(letter)) {
+            console.log("Correct letter, but wrong position")
+            correctAnswerArray.splice(index, 1)
+        } else {
+            console.log("No correct letters")
+            console.log(correctAnswerArray)
+        }
+    })
+
+  }
+
+  testwordle('sseee')
+
+ 
