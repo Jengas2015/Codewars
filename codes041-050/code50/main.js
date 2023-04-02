@@ -67,3 +67,6 @@ function dividedBy(rightOperand) {
         return Math.floor(leftOperand / rightOperand)
     }
 }
+
+
+// link to explanation tweet: https://twitter.com/Codingwithroy/status/1642625015869845505?s=20
