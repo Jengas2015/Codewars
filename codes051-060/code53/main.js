@@ -10,7 +10,26 @@ cakes({flour: 500, sugar: 200, eggs: 1}, {flour: 1200, sugar: 1200, eggs: 5, mil
 cakes({apples: 3, flour: 300, sugar: 150, milk: 100, oil: 100}, {sugar: 500, flour: 2000, milk: 2000});  */
 
 function cakes(recipe, available) {
-  
+
+    const recipeList = Object.keys(recipe)
+    const availableList = Object.keys(available)
+    let cakesMade = 0
+    const ratioValues = []
+
+    recipeList.forEach(ingredient => {
+        if (!availableList.includes(ingredient)) {
+            cakesMade = 0
+        } else {
+            const ingredientRatio = {}
+            ingredientRatio[ingredient] = Math.floor(available[ingredient] / recipe[ingredient])
+            ratioValues.push(ingredientRatio[ingredient])
+            cakesMade = Math.min(...ratioValues)
+        }
+    })
+
+    return cakesMade
 }
 
-console.log(cakes())
+console.log(cakes({ flour: 500, sugar: 200, eggs: 1 }, { flour: 1200, sugar: 1200, eggs: 5, milk: 200 }))
+
+//link to explanation tweet: https://twitter.com/Codingwithroy/status/1643620086027001858?s=20
