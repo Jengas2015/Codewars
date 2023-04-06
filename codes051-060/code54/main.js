@@ -56,3 +56,5 @@ function productFib(prod){
   }
 
   console.log(productFib(4895))
+
+  // link to explanation tweet: https://twitter.com/Codingwithroy/status/1643993578430140419?s=20
