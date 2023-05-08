@@ -21,17 +21,22 @@ function titleCase(title, minorWords) {
     const titleArray = title.split(' ')
     let minorWArray
     minorWords === undefined ? minorWArray = '' : minorWArray = minorWords.toLowerCase().split(' ')
+
+    function justTheTip (word) {
+        return word.slice(0, 1).toUpperCase() + word.slice(1).toLowerCase()
+    }
+    
     const titleCaseMe = titleArray.map((word, index) => {
         if (index===0) {
-            return word.slice(0, 1).toUpperCase() + word.slice(1).toLowerCase()
+            return justTheTip(word)
         } else if(minorWArray.includes(word.toLowerCase())) {
             return word.toLowerCase()
         } else {
-            return word.slice(0, 1).toUpperCase() + word.slice(1).toLowerCase()
+            return justTheTip(word)
         }
     })
     return titleCaseMe.join(' ')
 }
 
 
-console.log(titleCase("THE WIND IN THE WILLOWS", "a an the of"))
+console.log(titleCase("THE WIND IN THE WILLOWS", "a an in the of"))
