@@ -42,3 +42,4 @@ console.log(matrixAddition(
     [ [2, 3],
     [2, 3] ]))
 
+//explanation tweet: https://twitter.com/Codingwithroy/status/1661760524516835328?s=20
