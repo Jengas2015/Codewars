@@ -37,39 +37,39 @@ function mazeRunner(maze, directions) {
     let y = 0;
     maze.forEach((row, i) => {
       if (row.includes(2)) {
-        x = i;
-        y = row.indexOf(2);
+        x = row.indexOf(2);
+        y = i;
       }
     });
     for (let i = 0; i < directions.length; i++) {
       switch (directions[i]) {
         case "N":
-          x--;
+          y--;
           break;
         case "E":
-          y++;
-          break;
-        case "S":
           x++;
           break;
+        case "S":
+          y++;
+          break;
         case "W":
-          y--;
+          x--;
           break;
       }
       if (
         x < 0 ||
         y < 0 ||
-        x >= maze.length ||
-        y >= maze[0].length ||
-        maze[x][y] === 1
+        x >= maze[0].length ||
+        y >= maze.length ||
+        maze[y][x] === 1
       ) {
         return "Dead";
-      } else if (maze[x][y] === 3) {
+      } else if (maze[y][x] === 3) {
         return "Finish";
       }
     }
     return "Lost";
-}
+  }
 
 const maze = 
 [[1,1,1,1,1,1,1],
