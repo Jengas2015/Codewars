@@ -90,12 +90,13 @@ function findSubstring(s, words) {
         let rightPointer = i + totalLength;
         let tempMap = { ...wordMap };
 
-        for (let j = leftPointer; j < rightPointer; j += wordLength) {
-            let word = s.substring(j, j + wordLength);
-            tempMap[word] = (tempMap[word] || 0) - 1;
-        }
-
         while (rightPointer <= s.length) {
+
+            for (let j = leftPointer; j < rightPointer; j += wordLength) {
+                let word = s.substring(j, j + wordLength);
+                tempMap[word] = (tempMap[word] || 0) - 1;
+            }
+
             if (Object.values(tempMap).every(count => count === 0)) {
                 result.push(leftPointer);
             }
@@ -104,6 +105,8 @@ function findSubstring(s, words) {
             leftPointer += wordLength;
             rightPointer += wordLength;
             tempMap[s.substring(rightPointer - wordLength, rightPointer)] -= 1;
+
+            tempMap = { ...wordMap };
         }
     }
 
