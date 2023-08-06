@@ -45,3 +45,7 @@ function mergeTwoLists(l1, l2) {
     return head.next;
 }
 
+//console log tests
+console.log(mergeTwoLists([1, 2, 4], [1, 3, 4])); //Output: [1,1,2,3,4,4]
+console.log(mergeTwoLists([], [])); //Output: []
+console.log(mergeTwoLists([], [0])); //Output: [0]
