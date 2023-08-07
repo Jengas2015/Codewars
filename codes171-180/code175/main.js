@@ -27,6 +27,19 @@ The number of nodes in both lists is in the range [0, 50].
 -100 <= Node.val <= 100
 Both list1 and list2 are sorted in non-decreasing order. */
 
+//Definition for singly-linked list.
+
+
+class ListNode {
+    constructor(val, next) {
+        this.val = val === undefined ? 0 : val;
+        this.next = next === undefined ? null : next;
+    }
+}
+
+const l1 = new ListNode(1, new ListNode(2, new ListNode(4)));
+const l2 = new ListNode(1, new ListNode(3, new ListNode(4)));
+
 function mergeTwoLists(l1, l2) {
     let head = new ListNode();
     let current = head;
@@ -46,6 +59,6 @@ function mergeTwoLists(l1, l2) {
 }
 
 //console log tests
-console.log(mergeTwoLists([1, 2, 4], [1, 3, 4])); //Output: [1,1,2,3,4,4]
+console.log(mergeTwoLists(l1, l2)); //Output: [1,1,2,3,4,4]
 console.log(mergeTwoLists([], [])); //Output: []
 console.log(mergeTwoLists([], [0])); //Output: [0]
