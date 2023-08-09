@@ -32,7 +32,7 @@ var reverseBetween = function (head, left, right) {
         count++;
     }
     while (count < right) {
-        let temp = curr.next;
+        let temp = curr.next; 
         curr.next = temp.next;
         temp.next = prev.next;
         prev.next = temp;
