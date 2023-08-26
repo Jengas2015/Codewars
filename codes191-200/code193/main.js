@@ -37,7 +37,32 @@ The number of nodes in the tree is in the range [1, 1000].
 The depth of the tree will not exceed 10. */
 
 var sumNumbers = function(root) {
-    let sum = 0;
+
+    let sum = 0
+
+    function dfs (node, str) {
+        if (!node) {
+            return
+        }
+
+        str += node.val
+
+        if (!node.left && !node.right) {
+            return sum+= parseInt(str)
+        }
+
+        dfs (node.left, str)
+        dfs (node.right, str)
+    }
+
+    dfs (root, '')
+
+    return sum
+
+
+
+
+/*     let sum = 0;
     const dfs = (node, str) => {
         if (!node) return;
         str += node.val;
@@ -49,6 +74,6 @@ var sumNumbers = function(root) {
         dfs(node.right, str);
     }
     dfs(root, '');
-    return sum;
+    return sum; */
 };
 
