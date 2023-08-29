@@ -28,7 +28,29 @@ The number of nodes in the tree is in the range [0, 5 * 104].
 The tree is guaranteed to be complete. */
 
 var countNodes = function (root) {
-    if (!root) return 0;
+
+    if (!root) {
+        return 0
+    }
+
+    let count = 0
+    let queue = [root]
+    while (queue.length) {
+
+        let node = queue.shift()
+        count++
+
+        if (node.left) {
+            queue.push(node.left)
+        }
+        if (node.right) {
+            queue.push(node.right)
+        }
+
+    }
+    return count
+
+/*     if (!root) return 0;
     let count = 0;
     const queue = [root];
     while (queue.length) {
@@ -37,6 +59,6 @@ var countNodes = function (root) {
         if (node.left) queue.push(node.left);
         if (node.right) queue.push(node.right);
     }
-    return count;
+    return count; */
 }
 
