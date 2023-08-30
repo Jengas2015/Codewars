@@ -32,15 +32,27 @@ p and q will exist in the tree. */
 
 function lowestCommonAncestor(root, p, q) {
 
-    if (!root) return null;
-    if (root.val === p.val || root.val === q.val) return root;
+    if(!root) return null
+
+    if (root.val=== p.val || root.val === q.val) return root
 
     let left = lowestCommonAncestor(root.left, p, q)
     let right = lowestCommonAncestor(root.right, p, q)
 
-    if (left && right) return root;
-    if (!left && !right) return null;
+    if(left && right) return root
+    if (!left && !right) return null
 
-    return left ? left : right;
+    return left? left : right
+
+    /*     if (!root) return null;
+        if (root.val === p.val || root.val === q.val) return root;
+    
+        let left = lowestCommonAncestor(root.left, p, q)
+        let right = lowestCommonAncestor(root.right, p, q)
+    
+        if (left && right) return root;
+        if (!left && !right) return null;
+    
+        return left ? left : right; */
 }
 
