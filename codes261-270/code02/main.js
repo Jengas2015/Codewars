@@ -32,3 +32,10 @@ function longestPalindrome(s) {
     }
     return longest;
 }
+
+function expandFromCenter(s, left, right) {
+    let i = 0;
+    while (s[left - i] && s[left - i] === s[right + i]) i++;
+    i--;
+    return s.slice(left - i, right + i + 1);
+}
