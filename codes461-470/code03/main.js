@@ -26,4 +26,8 @@ What does Dispatching do? Is this how the code finalizes a request to the server
 What is your thought process when you look at a task that builds out a feature? Is there a mental skeleton of heirarchies that you need to build in order as you flesh things out?
 
 Could you explain what EffectMethod does? I think there were like 3 or 4 things that each feature needed to have and EffectMethod was one of them?
+
+Ask Delkhaz about setting up the environment when we meet
+
+delete employees from profile table where employee id wasn't null.
 */
