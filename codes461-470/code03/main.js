@@ -30,4 +30,12 @@ Could you explain what EffectMethod does? I think there were like 3 or 4 things 
 Ask Delkhaz about setting up the environment when we meet
 
 delete employees from profile table where employee id wasn't null.
+
+Head first into design patterns
+
+Designing naming conventions to be cateogrized into similar kinds of functionalities (i.e chewing, tasting, swallowing, all having eating in common so they'd be named ChewEat, TasteEat, SwallowEat so that if you wanted to create a new "Eat" class, you can reference other "Eat" classes and obtain guidance from those files).
+
+
+"Reading code is a more important skill than writing it."
+
 */
